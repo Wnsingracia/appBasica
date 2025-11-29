@@ -1,3 +1,4 @@
+import 'package:appbasica/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,12 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("commit"),
-        ),
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        body: PantallaPrincipal()
       ),
     );
   }
