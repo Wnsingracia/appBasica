@@ -1,3 +1,4 @@
+import 'package:appbasica/models/Objeto.dart';
 import 'package:appbasica/pages/ObjetosEncontradosPage.dart';
 import 'package:appbasica/pages/ObjetosPerdidosPage.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,8 @@ class PantallaPrincipal extends StatefulWidget {
 
 class _PantallaPrincipalState extends State<PantallaPrincipal> {
   int _index = 0;
+  List<Objeto> objetosPerdidos = [];
+  List<Objeto> objetosEncontrados = [];
   final List<Widget> _pages = [ObjetosPerdidosPage(), ObjetosEncontradosPage()];
 
   @override

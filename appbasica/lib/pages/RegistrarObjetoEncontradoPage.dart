@@ -6,10 +6,12 @@ class RegistrarObjetoEncontradoPage extends StatefulWidget {
   final Objeto objeto;
 
   @override
-  State<RegistrarObjetoEncontradoPage> createState() => _RegistrarObjetoEncontradoPageState();
+  State<RegistrarObjetoEncontradoPage> createState() =>
+      _RegistrarObjetoEncontradoPageState();
 }
 
-class _RegistrarObjetoEncontradoPageState extends State<RegistrarObjetoEncontradoPage> {
+class _RegistrarObjetoEncontradoPageState
+    extends State<RegistrarObjetoEncontradoPage> {
   final _formKey = GlobalKey<FormState>();
   final _lugarEncontradoController = TextEditingController();
   final _lugarActualController = TextEditingController();
@@ -23,21 +25,28 @@ class _RegistrarObjetoEncontradoPageState extends State<RegistrarObjetoEncontrad
           key: _formKey,
           child: Column(
             children: [
-              Text("Objeto: ${widget.objeto.nombre}", style: TextStyle(fontWeight: FontWeight.bold)),
-              TextFormField(controller: _lugarEncontradoController, decoration: InputDecoration(labelText: "Lugar encontrado")),
-              TextFormField(controller: _lugarActualController, decoration: InputDecoration(labelText: "Lugar actual")),
+              Text(
+                "Objeto: ${widget.objeto.nombre}",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              TextFormField(
+                controller: _lugarEncontradoController,
+                decoration: InputDecoration(labelText: "Lugar encontrado"),
+              ),
+              TextFormField(
+                controller: _lugarActualController,
+                decoration: InputDecoration(labelText: "Lugar actual"),
+              ),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // provider.marcarComoEncontrado(
-                  //   widget.objeto,
-                  //   _lugarEncontradoController.text,
-                  //   _lugarActualController.text,
-                  // );
-                  // Navigator.pop(context);
+                  widget.objeto.lugarEncontrado = _lugarEncontradoController.text;
+                  widget.objeto.lugarActual = _lugarEncontradoController.text;
+                  widget.objeto.encontrado = true;
+                  Navigator.pop(context, true);
                 },
                 child: Text("Guardar"),
-              )
+              ),
             ],
           ),
         ),
