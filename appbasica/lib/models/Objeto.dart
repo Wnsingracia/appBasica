@@ -14,4 +14,7 @@ class Objeto {
     this.lugarActual = "",
     this.encontrado = false,
   });
+
+  @override
+  String toString() => 'Objeto(nombre: $nombre, tipo: $tipo)';
 }

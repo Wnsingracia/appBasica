@@ -1,5 +1,6 @@
-import 'package:appbasica/pages/ObjetosEncontradosPage.dart';
-import 'package:appbasica/pages/ObjetosPerdidosPage.dart';
+import 'package:appbasica/pages/objetos_encontrados_page.dart';
+import 'package:appbasica/pages/objetos_perdidos_page.dart';
+import 'package:appbasica/data/objeto_repository.dart';
 import 'package:flutter/material.dart';
 
 class PantallaPrincipal extends StatefulWidget {
@@ -17,16 +18,28 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_index],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _index,
-        onTap: (i) => setState(() => _index = i),
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Perdidos"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.check_circle),
-            label: "Encontrados",
-          ),
-        ],
+      bottomNavigationBar: ValueListenableBuilder<List>(
+        valueListenable: ObjetoRepository.instance.objects,
+        builder: (context, objetos, _) {
+          final countPerdidos = objetos.where((o) => !o.encontrado).length;
+          return BottomNavigationBar(
+            currentIndex: _index,
+            onTap: (i) => setState(() => _index = i),
+            items: [
+              BottomNavigationBarItem(
+                icon: Badge(
+                  label: Text(countPerdidos.toString()),
+                  child: Icon(Icons.search),
+                ),
+                label: "Perdidos",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.check_circle),
+                label: "Encontrados",
+              ),
+            ],
+          );
+        },
       ),
     );
   }
