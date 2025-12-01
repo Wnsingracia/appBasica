@@ -45,8 +45,7 @@ class _AgregarObjetoPageState extends State<AgregarObjetoPage> {
         centerTitle: true,
       ),
       backgroundColor: Color.fromARGB(255, 94, 88, 88),
-      body: SingleChildScrollView(
-        child: Padding(
+      body: Padding(
           padding: EdgeInsets.all(16),
           child: Form(
             key: _formKey,
@@ -161,7 +160,7 @@ class _AgregarObjetoPageState extends State<AgregarObjetoPage> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 20),
+                                SizedBox(height: 300),
                               ],
                             ),
                           ),
@@ -189,7 +188,7 @@ class _AgregarObjetoPageState extends State<AgregarObjetoPage> {
             ),
           ),
         ),
-      ),
     );
   }
+  
 }

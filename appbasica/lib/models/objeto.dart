@@ -16,5 +16,5 @@ class Objeto {
   });
 
   @override
-  String toString() => 'Objeto(nombre: $nombre, tipo: $tipo)';
+  String toString() => lugarPerdido.isEmpty && lugarActual.isEmpty ? 'Objeto(nombre: $nombre, tipo: $tipo)': 'Objeto(nombre: $nombre, tipo: $tipo, lugar encontrado: $lugarPerdido, lugar perdido: $lugarPerdido)' ;
 }

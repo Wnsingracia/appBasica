@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appbasica/data/objeto_repository.dart';
-import 'package:appbasica/widgets/card_objeto_perdido.dart';
+import 'package:appbasica/widgets/card_objeto_encontrado.dart';
 
 class ObjetosEncontradosPage extends StatefulWidget {
   const ObjetosEncontradosPage({super.key});
@@ -28,7 +28,7 @@ class _ObjetosEncontradosPageState extends State<ObjetosEncontradosPage> {
                   itemCount: encontrados.length,
                   itemBuilder: (context, index) {
                     final objeto = encontrados[index];
-                    return ObjetoPerdido(
+                    return ObjetoEncontrado(
                       objeto: objeto,
                       onCheck: () {
                         setState(() {

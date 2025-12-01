@@ -1,16 +1,16 @@
 import 'package:appbasica/models/objeto.dart';
 import 'package:flutter/material.dart';
 
-class ObjetoPerdido extends StatelessWidget {
+class ObjetoEncontrado extends StatelessWidget {
   final Objeto objeto;
   final Function() onCheck;
 
-  const ObjetoPerdido({super.key, required this.objeto, required this.onCheck});
+  const ObjetoEncontrado({super.key, required this.objeto, required this.onCheck});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 253, 208, 208),
+      color: const Color.fromARGB(255, 211, 250, 205),
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: Padding(
         padding: const EdgeInsets.all(12),
@@ -29,6 +29,9 @@ class ObjetoPerdido extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(objeto.descripcion, style: TextStyle(fontSize: 14)),
+                  Text("Lugar encontrado: ${objeto.lugarPerdido}", style: TextStyle(fontSize: 14)),
+                  Text("lugar actual: ${objeto.lugarActual}", style: TextStyle(fontSize: 14)),
+                  
                 ],
               ),
             ),
