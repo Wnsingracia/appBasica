@@ -23,6 +23,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
         builder: (context, objetos, _) {
           final countPerdidos = objetos.where((o) => !o.encontrado).length;
           return BottomNavigationBar(
+            // funcionamiento de navegacion 
             currentIndex: _index,
             onTap: (i) => setState(() => _index = i),
             items: [

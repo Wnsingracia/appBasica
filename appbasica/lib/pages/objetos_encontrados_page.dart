@@ -22,6 +22,7 @@ class _ObjetosEncontradosPageState extends State<ObjetosEncontradosPage> {
             centerTitle: true,
             backgroundColor: Colors.lightBlue.shade100,
           ),
+          
           body: encontrados.isEmpty
               ? Center(child: Text('No hay objetos encontrados'))
               : ListView.builder(
