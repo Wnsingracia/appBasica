@@ -161,7 +161,7 @@ class _AgregarObjetoPageState extends State<AgregarObjetoPage> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(height: 300),
+                                  SizedBox(height: 200),
                                 ],
                               ),
                             ),
